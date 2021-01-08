@@ -1,0 +1,9 @@
+.navbar-default{
+    background-color: midnightblue;
+
+}
+.navbar-brand{
+    font-size: 225%;
+    color: white;
+    margin-left: 5%;
+}

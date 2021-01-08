@@ -1,0 +1,26 @@
+<div class="container mt-5"> 
+    <table class="table">
+        <thead>
+            <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let employee of employees">
+                <td>{{employee.id}}</td>
+                <td>{{employee.name}}</td>
+                <td>{{employee.email}}</td>
+                <td>{{employee.phone}}</td>
+                <td><button [routerLink]="['employee/view',employee.id]" disabled>View</button></td>
+                <td><button [routerLink]="['employee/edit',employee.id]" disabled>Edit</button></td>
+                <td><button (click)="onDelete(employee.id)"disabled>Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+    </div>

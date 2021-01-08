@@ -1,0 +1,34 @@
+<app-header></app-header>
+<div class = "container mt">
+<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <div class="form-group" [class.has-error]="id.invalid && id.touched">
+        <label for="" class="{{label}}">Id</label>
+        <input type="{{label}}" class="form-control" [ngModel]="employee.id" required name="id" #id="ngModel" pattern = "^[1-9]+[0-9]*$">
+        <span class="help-block" *ngIf="id.errors?.required && id.touched"> Id is required </span>
+    </div>
+    <div class="form-group" [class.has-error]="name.invalid && name.touched">
+        <label for="">Name</label>
+        <input id="name" type="text" class="form-control" [ngModel]="employee.name" name="name" required #name="ngModel">
+        <span class="help-block" *ngIf="name.errors?.required && name.touched"> Name is required </span>
+    </div>
+    <div>
+    </div>
+    <div>
+    </div>
+    <div class="form-group" [class.has-error]="email.invalid && email.touched">
+        <label for="email" class="control-label">Email</label>
+        <input id="email" type="email" class="form-control" required [ngModel]="employee.email" name=email #email="ngModel" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[a-z]{2,4}$" />
+        <span class="help-block" *ngIf="email.errors?.required && email.touched"> Email is required </span>
+    </div>
+    <div class="form-group"[class.has-error]="phone.invalid && phone.touched"> 
+        <label for="">Phone</label>
+        <input type="text" class="form-control" [ngModel]="employee.phone" name="phone" required #phone="ngModel">
+        <span class="help-block" *ngIf="phone.errors?.required && phone.touched"> Phone is required </span>
+    </div>
+    <div class="form-group">
+        <button class="{{btnaddupdate}}"type="submit" [disabled]="!f.valid">{{submitbtn}}</button>
+    </div>
+</form>
+</div>
+<hr class="hr">
+<app-employees></app-employees>

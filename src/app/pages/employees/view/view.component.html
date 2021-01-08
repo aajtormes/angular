@@ -1,0 +1,24 @@
+<app-header></app-header>
+<div class = "container">
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+        <div class="form-group">
+            <label for="" >Id:</label>
+            <input type="text" class="txtbx" [ngModel]="employee.id" name="id">
+        </div>
+        <div class="form-group">
+            <label for="" >Name:</label>
+            <input type="text" class="txtbx" [ngModel]="employee.name" name="name" disabled>
+        </div>
+        <div class="form-group">
+            <label for="">Email:</label>
+            <input type="email" class="txtbx" [ngModel]="employee.email" name=email disabled>
+        </div>
+        <div class="form-group">
+            <label for="">Phone:</label>
+            <input type="text" class="txtbx" [ngModel]="employee.phone" name="phone" disabled>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary" type="submit">Back</button>
+        </div>
+    </form>
+    </div>
